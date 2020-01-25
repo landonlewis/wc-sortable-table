@@ -185,6 +185,11 @@ class WCSortableTable extends HTMLElement {
       const tr = document.createElement('tr');
       row.forEach(cell => {
         const td = document.createElement('td');
+        if (cell instanceof HTMLElement) {
+          td.appendChild(cell);
+        }else{
+          td.innerText = cell;
+        }
         td.innerText = cell;
         tr.appendChild(td);
       });
@@ -197,7 +202,10 @@ class WCSortableTable extends HTMLElement {
       this.__table = table;
       this.shadowRoot.appendChild(this.__table);
     } else {
-      this.removeChild(this.__table);
+      try {
+        this.removeChild(this.__table);
+      }
+      catch(e) { }
       this.__table = table;
       this.appendChild(this.__table);
     }
