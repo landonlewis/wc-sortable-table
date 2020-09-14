@@ -159,7 +159,6 @@ export class WCSortableTable extends HTMLElement {
         }else{
           td.innerText = cell;
         }
-        td.innerText = cell;
         tr.appendChild(td);
       });
       tbody.appendChild(tr);
