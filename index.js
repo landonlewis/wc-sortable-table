@@ -187,10 +187,9 @@ class WCSortableTable extends HTMLElement {
         const td = document.createElement('td');
         if (cell instanceof HTMLElement) {
           td.appendChild(cell);
-        }else{
+        }else {
           td.innerText = cell;
         }
-        td.innerText = cell;
         tr.appendChild(td);
       });
       tbody.appendChild(tr);
